@@ -7,7 +7,7 @@ date: '2020-01-02'
 
 先来参考一下 webkit 渲染主要流程：
 
-![图片描述](assets/bVHJfZ.png)
+![图片描述](/images/bVHJfZ.png)
 
 - HTML 解析成 DOM 树，CSS 解析成 CSSOM 树，两者结合生成一棵 Render 树。
 - 根据 Render Tree（包含节点、样式、从属关系）计算出每个节点在屏幕中的大小、位置。
