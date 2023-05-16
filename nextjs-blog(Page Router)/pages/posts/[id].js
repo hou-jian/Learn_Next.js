@@ -1,10 +1,10 @@
-import { getAllPostIds, getPostData } from '../../lib/posts';
-
 import Head from 'next/head';
 import Layout from '../../components/layout';
 import Date from '../../components/date';
-import utilStyles from '../../styles/utils.module.css';
+import Comment from '../../components/comment.js';
 
+import { getAllPostIds, getPostData } from '../../lib/posts';
+import utilStyles from '../../styles/utils.module.css';
 
 export async function getStaticPaths() {
   const paths = getAllPostIds()
@@ -36,6 +36,7 @@ export default function Post({ postData }) {
         </div>
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
       </article>
+      <Comment />
     </Layout>
   )
 }
