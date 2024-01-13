@@ -12,3 +12,12 @@ export default function Home() {
     </>
   )
 }
+
+Home.getLayout = function getLayout(page) {
+  return (
+    <div>
+      <h1>测试</h1>
+      {page}
+    </div>
+  )
+}
