@@ -25,6 +25,8 @@ async function seedUsers(client) {
     // Insert data into the "users" table
     const insertedUsers = await Promise.all(
       users.map(async (user) => {
+        // bcrypt 进行密码哈希时，不需要手动指定 salt，bcrypt 会自动生成并将其包含在最终的哈希值中。
+        // 参数 10 表示计算的轮数，10次是比较合理的次数。
         const hashedPassword = await bcrypt.hash(user.password, 10);
         return client.sql`
         INSERT INTO users (id, name, email, password)
